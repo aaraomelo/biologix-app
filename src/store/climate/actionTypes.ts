@@ -1,0 +1,1 @@
+export const GET_CLIMATE_STATUS = "GET_CLIMATE_STATUS"
