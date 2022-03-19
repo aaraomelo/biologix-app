@@ -8,14 +8,12 @@ export const setAddress = (payload: SetFieldAction) =>
 export const getClimateStatus = (payload: RequestAction) =>
   ({ type: actionTypes.GET_CLIMATE_STATUS, payload });
 
-  export const setClimate = (payload: ClimateInterface) =>
+export const setClimate = (payload: ClimateInterface) =>
   ({ type: actionTypes.SET_CLIMATE, payload });
 
-export const getClimate = () => (dispatch: any, getState: () => Readonly<RootState>) => {
-  const state = getState();
-  const address = state.climate.address;
-  const baseUrl = state.request.baseURL;
-  const url = `${baseUrl}weather?q=${address}&appid=948a9eb0ea9cc5eb81d70b3f8b79eed8`;
+export const getClimate = () => (dispatch: any, getState: () => RootState) => {
+  const { request: { baseURL, appId }, climate: { address } } = getState();
+  const url = `${baseURL}weather?q=${address}&appid=${appId}`;
   return GET(url, dispatch, getClimateStatus)
     .then((response) => {
       dispatch(setClimate(response.data.main))

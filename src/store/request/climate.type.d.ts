@@ -1,4 +1,5 @@
 
 type RequestState = {
-  baseURL: string
+  baseURL: string,
+  appId: string
 }
