@@ -1,6 +1,4 @@
 import axios from "axios";
-import { AppDispatch } from ".";
-
 
 export const GET = (url: string, dispatch: any, requestAction: any) =>
   new Promise<any>((resolve, reject) => {

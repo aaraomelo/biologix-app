@@ -1,0 +1,4 @@
+
+type RequestState = {
+  baseURL: string
+}
