@@ -10,8 +10,3 @@ interface RequestAction {
   status: string
   value: boolean
 }
-
-interface SetFieldAction {
-  field: string
-  value: any
-}

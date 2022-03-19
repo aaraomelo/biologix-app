@@ -1,29 +1,17 @@
 import './App.css';
-import { connect } from 'react-redux';
+import Header from './components/Header/Header';
+import WeatherForm from './components/WeatherForm/WeatherForm';
+import WeatherCard from './components/WeatherCard/WeatherCard';
 
-type Props = MapStateToPropsTypes & MapDispatchToPropsTypes;
-function App({ }: Props) {
+function App() {
+
   return (
-    <div className="App">
-
+    <div className="wrapper">
+      <Header />
+      <WeatherForm />
+      <WeatherCard />
     </div>
   );
 }
 
-interface MapStateToPropsTypes { }
-
-interface MapDispatchToPropsTypes { }
-
-function mapStateToProps(state: any) {
-  return {}
-}
-
-const mapDispatchToProps = (dispatch: any) => {
-  return {}
-}
-
-export default connect<MapStateToPropsTypes, MapDispatchToPropsTypes>(
-  mapStateToProps,
-  mapDispatchToProps)
-  (App);
-
+export default App;

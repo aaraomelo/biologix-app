@@ -1,11 +1,11 @@
 import React, { cloneElement } from 'react'
 import { Provider } from "react-redux";
 import { configureStore } from '@reduxjs/toolkit';
-import climateReducer from "./climate/reducer";
+import weatherReducer from "./weather/reducer";
 import requestReducer from "./request/reducer";
 
 const reducer = {
-  climate: climateReducer,
+  weather: weatherReducer,
   request: requestReducer
 }
 
